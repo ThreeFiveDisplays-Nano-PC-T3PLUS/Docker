@@ -65,7 +65,7 @@ RUN apt-get -y install libc6
 # for wireguard
 RUN apt-get -y install libmnl-dev kmod
 
-WORKDIR home/tugy/develop/nano_t3_plus/
+WORKDIR home/tugy/develop/T3plus/s5pxx18-android-7/
 
 # for 64bit cross compiler toolchain
 
