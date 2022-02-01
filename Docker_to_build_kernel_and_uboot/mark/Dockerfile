@@ -78,6 +78,6 @@ RUN git clone https://github.com/friendlyarm/prebuilts.git  /opt/FriendlyARM/pre
 RUN cat /opt/FriendlyARM/prebuilts/gcc-x64/toolchain-6.4-aarch64.tar.* | tar -xzvf - -i -C /
 #RUN tar -xxv --all-args-are-archives /opt/FriendlyARM/prebuilts/gcc-x64/toolchain-6.4-aarch64.tar.* 
 ENV PATH=/opt/FriendlyARM/toolchain/6.4-aarch64/bin:$PATH
-
-
+RUN curl https://storage.googleapis.com/git-repo-downloads/repo > /usr/local/bin/repo && \
+    chmod +x /usr/local/bin/repo
 ENTRYPOINT /bin/bash
