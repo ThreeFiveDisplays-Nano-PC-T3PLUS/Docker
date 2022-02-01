@@ -80,4 +80,7 @@ RUN cat /opt/FriendlyARM/prebuilts/gcc-x64/toolchain-6.4-aarch64.tar.* | tar -xz
 ENV PATH=/opt/FriendlyARM/toolchain/6.4-aarch64/bin:$PATH
 RUN curl https://storage.googleapis.com/git-repo-downloads/repo > /usr/local/bin/repo && \
     chmod +x /usr/local/bin/repo
+RUN perl -0777 -i -p -e 's/(jdk.tls.disabledAlgorithms=.*?), TLSv1, TLSv1\.1/$1/g' \
+     /etc/java-8-openjdk/security/java.security
+
 ENTRYPOINT /bin/bash
