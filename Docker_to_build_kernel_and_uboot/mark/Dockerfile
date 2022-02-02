@@ -82,5 +82,5 @@ RUN curl https://storage.googleapis.com/git-repo-downloads/repo > /usr/local/bin
     chmod +x /usr/local/bin/repo
 RUN perl -0777 -i -p -e 's/(jdk.tls.disabledAlgorithms=.*?), TLSv1, TLSv1\.1/$1/g' \
      /etc/java-8-openjdk/security/java.security
-RUN apt-get -y rsync
+RUN apt-get -y install rsync
 ENTRYPOINT /bin/bash
